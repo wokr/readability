@@ -21,6 +21,7 @@ Where
   * **html** url or html code.
   * **callback** is the callback to run - `callback(error, article, meta)`
   * **options** {extendMode: true}
+
 Example
 ```javascript
 var read = require('node-readability');
