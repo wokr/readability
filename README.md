@@ -10,7 +10,7 @@ Turn any web page into a clean view. This module is based on arc90's readability
 
 ## Install
 
-    $ npm install node-readability-kashif
+    $ npm install readability-extended
 
 ## Usage
 
