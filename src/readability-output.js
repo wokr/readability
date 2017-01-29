@@ -116,7 +116,6 @@ function read(html, configuration, callback) {
 
   function jsdomParse(error, meta, body, redirection) {
     if (error) {
-      console.log(error);
       return callback(error);
     }
     if (typeof body !== 'string') body = body.toString();

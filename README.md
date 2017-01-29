@@ -5,7 +5,8 @@ Turn any web page into a clean view. This module is based on arc90's readability
 1. Optimized for more websites.
 2. Supporting HTML5 tags(`article`, `section`) and Microdata API.
 3. Focusing on both accuracy and performance. 4x times faster than arc90's version.
-3. Supporting encodings such as GBK and GB2312.
+4. Supporting encodings such as GBK and GB2312.
+5. Extended mode give you access to all meta tags and to whole document (you have possibility to parse any element from webpage) 
 
 ## Install
 
@@ -19,7 +20,7 @@ Where
 
   * **html** url or html code.
   * **callback** is the callback to run - `callback(error, article, meta)`
-
+  * **options** {extendMode: true}
 Example
 ```javascript
 var read = require('node-readability');
@@ -46,11 +47,20 @@ read('http://howtonode.org/really-simple-file-uploads', function(err, article, m
   //Author
   console.log(article.byline);
   
+  //canonical_url
+  console.log(article.canononicalUrl);
+
+  // meta tags
+  console.log(article.metaData);
+
+  //document - jsdom object
+  console.log(article.articleContent);
+
   // Response Object from Request Lib
   console.log(meta);
 });
 read('http://howtonode.org/really-simple-file-uploads', function(err, article, meta) {
-  if(err){
+  if(:werr){
     console.log(err);
     if(err.status >= 400 && err.status < 511){
       console.log("Page not found");
