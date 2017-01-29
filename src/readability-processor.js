@@ -254,9 +254,7 @@ ReadabilityProcessor.prototype = {
          var elementName = element.getAttribute("rel");
          var elementProperty = element.getAttribute("href");
          
-         console.log(">>", elementName, elementProperty);
          if (elementName === "canonical") {
-            console.log(">>>>a")
             canonicalUrl = elementProperty;
          }
       });
@@ -1866,8 +1864,6 @@ ReadabilityProcessor.prototype = {
       var lead_image_url = this._grab_main_image_url();
 
       var canonicalUrl = this._getCanonicalUrl();
-
-      console.log(">>>>>>", canonicalUrl);
 
       return {
          uri: this._uri,
