@@ -1,12 +1,12 @@
 {
-  "name": "node-readability-kashif",
-  "version": "3.1.0",
-  "author": "Kashif Eqbal",
+  "name": "radability-extended",
+  "version": "1.0.0",
+  "author": "wokr",
   "description": "Turning any web page into a clean view.",
-  "homepage": "https://github.com/kashifeqbal/readability",
+  "homepage": "https://github.com/wokr/readability-extended",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kashifeqbal/readability.git"
+    "url": "https://github.com/wokr/readability-extended"
   },
   "scripts": {
     "test": "mocha -R spec"

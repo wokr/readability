@@ -50,13 +50,20 @@ function _parseContentType(str) {
   };
 }
 
-function read(html, callback) {
+function read(html, configuration, callback) {
+
+  if (typeof options === 'function') {
+    callback = options;
+    configuration = {};
+  }
+
   //Added Custom header in default option of Request Module
   var options = {
     url: html,
     headers: {
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36'
-    }
+    },
+    extendMode: configuration.extendMode || false
   };
   var overrideEncoding = options.encoding;
   var preprocess = options.preprocess;
@@ -144,6 +151,7 @@ function read(html, callback) {
             readability_procesor.close();
             var err = new Error('Unable to parse');
             err.status = 204
+            err.msg = 'Unable to parse';
             return callback(err);
           }
           obj.redirection = redirection;
